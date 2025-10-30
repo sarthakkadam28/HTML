@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+
+            
+    </style>
+
+  <title>Registration Form</title>
+</head>
+<body>
+
+  <h1>Registration Form</h1>
+
+  <form action="#" method="post">
+
+
+    <table>
+        <tr>
+            <td><label for="fullname">Full Name:</label></td>
+            <td> <input type="text" id="fullname" name="fullname" required/></td>
+        </tr>
+
+        <tr>
+            <td> <label for="email">Email Address:</label></td>
+            <td><input type="email" id="email" name="email" required></td>
+        </tr>
+
+        <tr>
+            <td><label for="password">Password:</label></td>
+            <td><input type="password" id="password" name="password" minlength="6" required></td>
+        </tr>
+        <tr>
+            <td> <label for="confirm_password">Confirm Password:</label></td>
+            <td> <input type="password" id="confirm_password" name="confirm_password" required></td>
+        </tr>
+
+        <tr>
+            <td> <label>Gender:</label><br></td>
+            <td><input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>Indian</td>
+            <td><input type="checkbox" id="status" name="indian/ "> Indian</td>
+        </tr>
+
+        <tr>
+            <td><label>Source of information received from:</label></td>
+            <td> 
+                <select>
+                    <option>Twitter</option>
+                    <option>LinkedIn</option>
+                    <option>Instagram</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type ="submit">Register<Register/button>
+
+            </td>
+        </tr>
+    </table>
+  </form>
+</body>
+</html>

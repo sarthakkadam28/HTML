@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      background-color: #f5f6fa;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background-color: #3a7bd7;
+      color: white;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .sidebar a {
+      display: block;
+      color: #dcdde1;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+    .sidebar a:hover {
+      background-color: #353b48;
+    }
+
+    /* Main content */
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+    h1 {
+      color: #2f3640;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      margin-top: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #0097e6;
+      color: #fff;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Header user info */
+    .user-info {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>My Dashboard</h2>
+    <a href="#">🏠 Home</a>
+    <a href="#">🛒 My Orders</a>
+    <a href="#">👤 Profile</a>
+    <a href="#">⚙️ Settings</a>
+    <a href="#">🚪 Logout</a>
+  </div>
+
+  <div class="main">
+    <div class="user-info">
+      <h3>Welcome, Sarthak Kadam</h3>
+      <p>Email: sarthak.kadam@gmail.com</p>
+    </div>
+
+    <h1>Customer Order History</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ORD001</td>
+          <td>2025-10-25</td>
+          <td>Wireless Mouse</td>
+          <td>2</td>
+          <td>$40.00</td>
+          <td>Delivered</td>
+        </tr>
+        <tr>
+          <td>ORD002</td>
+          <td>2025-10-27</td>
+          <td>Bluetooth Keyboard</td>
+          <td>1</td>
+          <td>$30.00</td>
+          <td>Shipped</td>
+        </tr>
+        <tr>
+          <td>ORD003</td>
+          <td>2025-10-29</td>
+          <td>USB-C Charger</td>
+          <td>3</td>
+          <td>$75.00</td>
+          <td>Processing</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
