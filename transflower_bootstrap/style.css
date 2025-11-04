@@ -1,0 +1,154 @@
+#storeCarousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    background-color: rgba(233, 30, 99, 0.6);
+    /* translucent pink */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bs-secondary);
+    color: #fff;
+    border-color: var(--bs-primary);
+}
+
+section {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Transflower Theme ===== */
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Override Bootstrap colors */
+:root {
+    --bs-primary: #e91e63;
+    /* blossom pink */
+    --bs-secondary: #4caf50;
+    /* leaf green */
+    --bs-warning: #ffeb3b;
+    /* sunshine yellow */
+}
+
+/* Navbar tweak */
+.navbar {
+    background-color: var(--bs-primary) !important;
+}
+
+.navbar .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: var(--bs-warning) !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+    background-color: #c2185b;
+    border-color: #c2185b;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bs-primary);
+}
+
+.nav-link.active {
+  color: var(--bs-warning) !important;
+  font-weight: 600;
+}
+
+
+
+
+/* ===== About Section Styling ===== */
+/* Headings: elegant serif */
+#about h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #d81b60; /* soft floral pink */
+  margin-bottom: 20px;
+}
+
+/* Paragraphs: clean and readable */
+#about p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Optional: section background and subtle accent */
+#about {
+  background: #fff0f5; /* light pink tint */
+  border-radius: 12px;
+  padding: 60px 0;
+}
+
+/* ===== Hover Effects ===== */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background-color: #c2185b;
+}
+
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+
+/* ===== Animated Icon in Navbar ===== */
+.navbar-brand i {
+  animation: bloom 2s ease-in-out infinite alternate;
+}
+
+@keyframes bloom {
+  0% { transform: scale(1); color: #fff; }
+  100% { transform: scale(1.2); color: #ffeb3b; }
+}
