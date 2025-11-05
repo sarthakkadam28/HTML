@@ -172,3 +172,187 @@ footer {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ===== Responsive Adjustments in index page with orderman ===== */
+.hero-section {
+  background: linear-gradient(135deg, #fff5f8, #ffe8ef);
+  border-radius: 0 0 60px 60px;
+  overflow: hidden;
+}
+
+.hero-section h1 span {
+  background: linear-gradient(45deg, #e91e63, #f44336);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-img {
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #e91e63, #ff1744);
+  border: none;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(45deg, #d81b60, #f50057);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+    
+/* footer with instagram and facebook */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* login form style and polish  */
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.btn-danger {
+  border-radius: 25px;
+}
+
+.card-header h4 {
+  letter-spacing: 1px;
+}
+
+/* gits,birthday,function stylish font */
+/* Tabs Styling */
+ #categoryTabs .nav-link {
+                background-color: #f8f9fa;
+                border: 1px solid #ddd;
+                transition: all 0.3s ease;
+            }
+
+            #categoryTabs .nav-link:hover {
+                background-color: #ffe6f0;
+                color: #dc3545;
+                transform: scale(1.05);
+            }
+
+            #categoryTabs .nav-link.active {
+                background-color: #dc3545;
+                color: white !important;
+                border-color: #dc3545;
+                box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+            }
+
+            /* Tab Content */
+            .tab-content p {
+                font-size: 1rem;
+                color: #555;
+            }
+
+            .tab-content h5 {
+                margin-bottom: 1rem;
+            }           
+
+            /* start shopping stylish font and icon */
+            .btn-start-shopping {
+                        display: inline-block;
+                        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+                        color: white;
+                        padding: 12px 30px;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        text-decoration: none;
+                        box-shadow: 0 4px 15px rgba(255, 105, 135, 0.4);
+                        transition: all 0.3s ease;
+                    }
+                    .btn-start-shopping:hover {
+                        background: linear-gradient(135deg, #ff5f6d, #ffc371);
+                        transform: translateY(-3px);
+                        box-shadow: 0 8px 20px rgba(255, 105, 135, 0.6);
+                        color: #fff;  }
+    
+body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff7fa;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #d81b60 !important;
+            /* Floral pink */
+        }
+
+        .navbar .nav-link,
+        .navbar .navbar-brand {
+            color: white !important;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #ffe4ec 0%, #fff0f5 100%);
+            padding: 80px 0;
+        }
+
+        .contact-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.1);
+            padding: 2rem;
+        }
+
+        .contact-card h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d81b60;
+            font-weight: 600;
+        }
+
+        .contact-card p {
+            color: #555;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: #d81b60;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ad1457;
+            transform: scale(1.03);
+        }
+
+        /* Form focus */
+        .form-control:focus {
+            border-color: #d81b60;
+            box-shadow: 0 0 5px rgba(216, 27, 96, 0.4);
+        }
+
+        /* Modal Header */
+        .modal-header.bg-success {
+            background-color: #d81b60 !important;
+            /* Changed from green */
+        }
+
+ 
