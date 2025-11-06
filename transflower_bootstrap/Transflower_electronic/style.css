@@ -1,0 +1,116 @@
+/* style of transflower store text */
+.navbar {
+      background: linear-gradient(45deg, #efdf72, #25241ffd);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      opacity: 0.95;
+    }
+
+    .navbar-brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #fff !important;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+      color: #ffe5ec !important;
+      transform: scale(1.05);
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s;
+      margin-top: 2px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: #ffe5ec !important;
+    }
+
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .logo {
+      height: 45px;
+      width: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    /* 🌸 Hero Section */
+    body {
+      background: linear-gradient(120deg, #fdcf64, #2f2d35);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .threeD-text {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #fff;
+      text-shadow:
+        1px 1px 0 #221210,
+        2px 2px 0 #2a1717,
+        3px 3px 0 #291617,
+        4px 4px 0 #0e0303,
+        5px 5px 15px rgba(0, 0, 0, 0.5);
+      transform: perspective(500px) rotateX(15deg);
+    }
+
+    .hero p {
+      color: #12100cc6;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    .btn-shop {
+      background-color: #dece55dd;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: 600;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-shop:hover {
+      background-color: #e28e45d6;
+      transform: scale(1.05);
+    }

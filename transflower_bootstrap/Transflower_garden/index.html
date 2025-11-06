@@ -46,6 +46,12 @@
             background-color: rgba(0, 0, 0, 0.8) !important;
             /* keeps navbar/footer dark and clear */
         }
+        .top-bar {
+            background-color: rgba(60, 57, 56, 0.955); /* fully transparent */
+            display: flex;
+            justify-content: flex-end;
+            padding: 1rem 2rem;
+        }
     </style>
 
 
@@ -54,12 +60,17 @@
 
 <body>
 
-    <div class="d-flex justify-content-between align-items-center p-3 bg-light">
-        <div>🌼 Transflower</div>
-        <div>
-            <a href="login.html" class="btn btn-outline-danger">Login</a>
-        </div>
+<!-- Transparent Top Bar with Right-Aligned Transparent Login Button -->
+<div class="d-flex justify-content-between align-items-center p-3" style="background-color: rgba(255,255,255,0.0);">
+ <br>
+    <!-- Login button on the right -->
+    <div>
+        <a href="login.html" class="btn" 
+           style="background-color: rgba(255,255,255,0.0); border: 1px solid #dc3545; color: #dc3545;">
+            Login
+        </a>
     </div>
+</div>
 
 
     <!-- Navbar -->
@@ -82,12 +93,16 @@
                             About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i>
                             Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html"><i class="bi bi-person-circle"></i>
+                            profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html"><i class="bi bi-cart4"></i>
+                            cart</a></li>
                 </ul>
             </div>
         </div>
-        <button class="btn btn-outline-light ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+        <!-- <button class="btn btn-outline-light ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">
             Contact Us
-        </button>
+        </button> -->
     </nav>
 
     <!-- Hero Section -->
