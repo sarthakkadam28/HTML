@@ -1,116 +1,109 @@
-/* style of transflower store text */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* 🌄 Background image for the entire page */
+  background-image: url("https://images.unsplash.com/photo-1606922306723-f146c749b19e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1972");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional parallax effect */
+  color: white;
+}
+
+/* 🌸 Transparent Navbar */
 .navbar {
-      background: linear-gradient(45deg, #efdf72, #25241ffd);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      opacity: 0.95;
-    }
+  background: transparent !important;
+  border: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 15px 0;
+}
 
-    .navbar-brand {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: #fff !important;
-      letter-spacing: 1px;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+.navbar-brand {
+  font-weight: 600;
+  color: white !important;
+}
 
-    .navbar-brand:hover {
-      color: #ffe5ec !important;
-      transform: scale(1.05);
-    }
+.navbar .logo {
+  width: 50px;
+  height: auto;
+  border-radius: 10px;
+}
 
-    .nav-link {
-      color: #fff !important;
-      font-weight: 500;
-      margin-right: 10px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
+.navbar .nav-link {
+  color: white !important;
+  font-weight: 500;
+  margin: 0 10px;
+  padding: 8px 14px;
+  border-radius: 25px;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
 
-    .nav-link::after {
-      content: '';
-      display: block;
-      width: 0%;
-      height: 2px;
-      background: #fff;
-      transition: width 0.3s;
-      margin-top: 2px;
-    }
+.navbar .nav-link:hover {
+  color: #ffd700 !important; /* gold hover effect */
+  transform: scale(1.1);
+}
 
-    .nav-link:hover::after {
-      width: 100%;
-    }
+.navbar .nav-link.active {
+  color: #ffeb3b !important;
+  font-weight: 600;
+}
 
-    .nav-link:hover {
-      color: #ffe5ec !important;
-    }
+/* ⚡ Hero Section (no background image) */
+.hero {
+  min-height: 100vh; /* full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: white;
+   padding-top: 2px; /*space for navbar */
+  background: transparent; /* 👈 no background image */
+}
 
-    .navbar-toggler {
-      border: none;
-      outline: none;
-    }
+/* Bubble effect */
+.hero .bubble {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 50px 70px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-    .navbar-toggler-icon {
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.8);
-    }
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 
-    .logo {
-      height: 45px;
-      width: auto;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
 
-    .logo:hover {
-      transform: scale(1.1);
-    }
+.btn-shop {
+  background-color: #ffc107;
+  color: black;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  border: none;
+}
 
-    /* 🌸 Hero Section */
-    body {
-      background: linear-gradient(120deg, #fdcf64, #2f2d35);
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .threeD-text {
-      font-size: 3rem;
-      font-weight: 900;
-      color: #fff;
-      text-shadow:
-        1px 1px 0 #221210,
-        2px 2px 0 #2a1717,
-        3px 3px 0 #291617,
-        4px 4px 0 #0e0303,
-        5px 5px 15px rgba(0, 0, 0, 0.5);
-      transform: perspective(500px) rotateX(15deg);
-    }
-
-    .hero p {
-      color: #12100cc6;
-      font-size: 1.2rem;
-      margin-top: 20px;
-    }
-
-    .btn-shop {
-      background-color: #dece55dd;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 30px;
-      color: #fff;
-      font-weight: 600;
-      margin-top: 30px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-shop:hover {
-      background-color: #e28e45d6;
-      transform: scale(1.05);
-    }
+.btn-shop:hover {
+  background-color: #ffdb4d;
+  transform: scale(1.05);
+}
