@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login ⚡ Transflower Store</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url("https://media.istockphoto.com/id/1351432684/photo/3d-rendering-of-cyberpunk-ai-circuit-board-technology-background-central-computer-processors.jpg?s=612x612&w=0&k=20&c=KfhEeRJy7mKz2jTfXUNE4HTHf0Yc4IgXnKtdOhDT7C8=");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  filter: brightness(1.1) contrast(1.1); /* enhances image clarity */
+}
+
+
+/* Overlay for better readability */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  /* was 0.6 — reduced for more clarity */
+  z-index: 0;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar .logo {
+  width: 45px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.navbar .nav-link {
+  color: white !important;
+  margin: 0 8px;
+  transition: all 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #ffb007 !important;
+  transform: scale(1.05);
+}
+
+/* Login Card */
+.login-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15); /* slightly more transparent */
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* softer shadow */
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-card h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  border-radius: 25px;
+  padding: 12px 20px;
+}
+
+.form-control::placeholder {
+  color: #ddd;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 8px #ffc107;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-login {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 12px;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #ffdb4d;
+  transform: scale(1.05);
+}
+
+.form-text a {
+  color: #ffc107;
+  text-decoration: none;
+}
+
+.form-text a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+    </style>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://cdn.logojoy.com/wp-content/uploads/20220228134805/optimal-electrical-logo.png" class="logo"
+          alt="Transflower Logo">
+        Transflower Store
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-lightning"></i> Products</a></li>
+          <li class="nav-item"><a class="nav-link active" href="login.html"><i class="bi bi-person-circle"></i> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Card -->
+  <div class="login-card">
+    <h2><i class="bi bi-person-fill-lock"></i> Login</h2>
+    <form>
+      <div class="mb-3 text-start">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+
+      <div class="mb-3 text-start">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+      </div>
+
+      <button type="submit" class="btn btn-login mt-3"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+
+      <div class="form-text mt-3">
+        <p>Don’t have an account? <a href="register.html">Sign up here</a></p>
+        <a href="#" class="text-warning">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+
+   <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1">© 2025 Transflower Store. All rights reserved.</p>
+            <p class="mb-0">Follow us on
+                <a href="#" class="text-danger text-decoration-none">Instagram</a> |
+                <a href="#" class="text-danger text-decoration-none">Facebook</a>
+            </p>
+        </div>
+    </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

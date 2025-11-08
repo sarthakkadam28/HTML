@@ -13,7 +13,8 @@
 
   <style>
     /* 🔋 Global Styling */
-    html, body {
+    html,
+    body {
       height: 100%;
       margin: 0;
       padding: 0;
@@ -62,7 +63,8 @@
 
     /* 🛒 Products Section */
     .products-section {
-      padding: 150px 0 80px; /* Space for navbar */
+      padding: 150px 0 80px;
+      /* Space for navbar */
       text-align: center;
     }
 
@@ -151,9 +153,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="products.html"><i class="bi bi-lightning"></i> Products</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html"><i class="bi bi-lightning"></i>
+              Products</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html"><i class="bi-basket"></i>cart</a></li>
         </ul>
       </div>
     </div>
@@ -166,21 +170,251 @@
 
       <!-- Product 1 -->
       <div class="col-md-4">
-        <div class="product-card">
-          <img src="https://plus.unsplash.com/premium_photo-1672759362274-bb02b3645cb8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1257" alt="Bulb">
+        <div class="product-card position-relative">
+          <!-- 🛒 Cart Icon (Top Right Corner) -->
+          <div class="cart-icon position-absolute top-0 end-0 m-3">
+            <button class="btn btn-light btn-sm rounded-circle shadow">
+              <i class="bi bi-cart-plus-fill text-dark"></i>
+            </button>
+          </div>
+
+          <img
+            src="https://plus.unsplash.com/premium_photo-1672759362274-bb02b3645cb8?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1257"
+            alt="Bulb">
+
           <div class="card-body">
             <h5>LED Smart Bulb</h5>
             <p>Energy-efficient and voice-controlled bulb with smart home compatibility.</p>
+
+            <!-- ⭐ Product Rating -->
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star text-warning"></i>
+              <span class="text-light ms-2">(4.0)</span>
+            </div>
+
             <div class="price">$15.99</div>
-            <button class="btn btn-buy mt-3"><i class="bi bi-cart"></i> Buy Now</button>
+
+            <button class="btn btn-buy mt-3">
+              <i class="bi bi-cart"></i> Buy Now
+            </button>
+
+            <!-- 💬 Customer Opinion -->
+            <div class="customer-review mt-3">
+              <small class="text-light fst-italic">
+                “Great smart bulb — easy to connect with Alexa!”
+              </small>
+              <p class="text-warning mb-0"><small>– Riya Sharma</small></p>
+            </div>
           </div>
         </div>
       </div>
 
+
       <!-- Product 2 -->
       <div class="col-md-4">
+        <div class="product-card position-relative">
+          <!-- 🛒 Cart Icon (Top Right Corner) -->
+          <div class="cart-icon position-absolute top-0 end-0 m-3">
+            <button class="btn btn-light btn-sm rounded-circle shadow">
+              <i class="bi bi-cart-plus-fill text-dark"></i>
+            </button>
+          </div>
+          <img
+            src="https://plus.unsplash.com/premium_photo-1729186145917-f53012cecc9f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQyfHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=600"
+            alt="Switch Board">
+          <div class="card-body">
+            <h5>Modular Switch Board</h5>
+            <p>Premium design switch boards built with fireproof, durable materials.</p>
+
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star text-warning"></i>
+              <span class="text-light ms-2">(4.1)</span>
+            </div>
+
+            <div class="price">$29.99</div>
+            <button class="btn btn-buy mt-3"><i class="bi bi-cart"></i> Buy Now</button>
+
+            <div class="customer-review mt-3">
+              <small class="text-light fst-italic">
+                “Stylish design and very durable. The switches feel premium and smooth to use.”
+              </small>
+              <p class="text-warning mb-0"><small>– Arjun Patel</small></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-4">
+        <div class="product-card position-relative">
+          <!-- 🛒 Cart Icon (Top Right Corner) -->
+          <div class="cart-icon position-absolute top-0 end-0 m-3">
+            <button class="btn btn-light btn-sm rounded-circle shadow">
+              <i class="bi bi-cart-plus-fill text-dark"></i>
+            </button>
+          </div>
+          <img
+            src="https://plus.unsplash.com/premium_photo-1675024368160-5bacaa752300?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA0fHx3aXJpbmclMjBjYWJsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+            alt="Cable">
+          <div class="card-body">
+            <h5>Copper Wiring Cable</h5>
+            <p>High conductivity copper wires for safe and efficient electricity flow.</p>
+            <!-- customer rating -->
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star text-warning"></i>
+              <span class="text-light ms-2">(3.9)</span>
+            </div>
+
+            <div class="price">$19.49</div>
+            <button class="btn btn-buy mt-3"><i class="bi bi-cart"></i> Buy Now</button>
+
+            <div class="customer-review mt-3">
+              <small class="text-light fst-italic">
+                “Excellent quality copper wires — very safe and flexible. Perfect for home electrical projects!”
+              </small>
+              <p class="text-warning mb-0"><small>– Neha Deshmukh</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-md-4">
+        <div class="product-card position-relative">
+          <!-- 🛒 Cart Icon (Top Right Corner) -->
+          <div class="cart-icon position-absolute top-0 end-0 m-3">
+            <button class="btn btn-light btn-sm rounded-circle shadow">
+              <i class="bi bi-cart-plus-fill text-dark"></i>
+            </button>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1662601633298-3b0f7ee2aef9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxyZWNoYXJnZWFibGUlMjBiYXR0ZXJ5fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+            alt="Battery">
+          <div class="card-body">
+            <h5>Rechargeable Battery</h5>
+            <p>Long-lasting rechargeable batteries ideal for household devices.</p>
+
+            <!-- customer rating -->
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star text-warning"></i>
+              <span class="text-light ms-2">(4.5)</span>
+            </div>
+            <div class="price">$24.99</div>
+            <button class="btn btn-buy mt-3"><i class="bi bi-cart"></i> Buy Now</button>
+
+            <div class="customer-review mt-3">
+              <small class="text-light fst-italic">
+                “Long-lasting battery life! I’ve been using it for months and it still holds charge perfectly.”
+              </small>
+              <p class="text-warning mb-0"><small>– Rohan Mehta</small></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col-md-4">
+        <div class="product-card position-relative">
+          <!-- 🛒 Cart Icon (Top Right Corner) -->
+          <div class="cart-icon position-absolute top-0 end-0 m-3">
+            <button class="btn btn-light btn-sm rounded-circle shadow">
+              <i class="bi bi-cart-plus-fill text-dark"></i>
+            </button>
+          </div>
+          <img
+            src="https://media.istockphoto.com/id/1358763578/photo/modern-ceiling-fan-with-lamps-indoors-interior-element.jpg?s=612x612&w=0&k=20&c=NmummHQWtJLvuorkh8FCj6m2HAn_7NzlEKiiCqnI-l4="
+            alt="Fan">
+          <div class="card-body">
+            <h5>Ceiling Fan</h5>
+            <p>Elegant energy-saving fan with aerodynamic blades for smooth airflow.</p>
+            <!-- customer rating   -->
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star text-warning"></i>
+              <span class="text-light ms-2">(4.5)</span>
+            </div>
+            <div class="price">$49.99</div>
+            <button class="btn btn-buy mt-3"><i class="bi bi-cart"></i> Buy Now</button>
+            <div class="customer-review mt-3">
+              <small class="text-light fst-italic">
+                “Long-lasting battery life! I’ve been using it for months and it still holds charge perfectly.”
+              </small>
+              <p class="text-warning mb-0"><small>– Rohan Mehta</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="col-md-4">
+        <div class="product-card position-relative">
+          <!-- 🛒 Cart Icon (Top Right Corner) -->
+          <div class="cart-icon position-absolute top-0 end-0 m-3">
+            <button class="btn btn-light btn-sm rounded-circle shadow">
+              <i class="bi bi-cart-plus-fill text-dark"></i>
+            </button>
+          </div>
+          <img
+            src="https://media.istockphoto.com/id/147853023/photo/universal-adapter-with-clipping-path.jpg?s=612x612&w=0&k=20&c=K1TpSLZYx-oKb3g2s8F7nOfVZe8zty7Ulzi7_7xvVNw="
+            alt="Adapter">
+          <div class="card-body">
+            <h5>Universal Adapter</h5>
+            <p>Compact and reliable multi-plug adapter for global compatibility.</p>
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star text-warning"></i>
+              <span class="text-light ms-2">(4.5)</span>
+            </div>
+            <div class="price">$12.99</div>
+            <button class="btn btn-buy mt-3"><i class="bi bi-cart"></i> Buy Now</button>
+
+            <div class="customer-review mt-3">
+              <small class="text-light fst-italic">
+                “Very handy while traveling abroad! Works with all plug types and feels sturdy.”
+              </small>
+              <p class="text-warning mb-0"><small>– Kavita Rao</small></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="products-section container">
+    <h1>⚡ Our Bestselling Products ⚡</h1>
+    <div class="row g-4">
+
+      <div class="col-md-4">
         <div class="product-card">
-          <img src="https://plus.unsplash.com/premium_photo-1729186145917-f53012cecc9f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQyfHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=600" alt="Switch Board">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1729186145917-f53012cecc9f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQyfHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=600"
+            alt="Switch Board">
           <div class="card-body">
             <h5>Modular Switch Board</h5>
             <p>Premium design switch boards built with fireproof, durable materials.</p>
@@ -193,7 +427,9 @@
       <!-- Product 3 -->
       <div class="col-md-4">
         <div class="product-card">
-          <img src="https://plus.unsplash.com/premium_photo-1675024368160-5bacaa752300?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA0fHx3aXJpbmclMjBjYWJsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600" alt="Cable">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1675024368160-5bacaa752300?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA0fHx3aXJpbmclMjBjYWJsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600"
+            alt="Cable">
           <div class="card-body">
             <h5>Copper Wiring Cable</h5>
             <p>High conductivity copper wires for safe and efficient electricity flow.</p>
@@ -206,7 +442,9 @@
       <!-- Product 4 -->
       <div class="col-md-4">
         <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1662601633298-3b0f7ee2aef9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxyZWNoYXJnZWFibGUlMjBiYXR0ZXJ5fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" alt="Battery">
+          <img
+            src="https://images.unsplash.com/photo-1662601633298-3b0f7ee2aef9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxyZWNoYXJnZWFibGUlMjBiYXR0ZXJ5fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
+            alt="Battery">
           <div class="card-body">
             <h5>Rechargeable Battery</h5>
             <p>Long-lasting rechargeable batteries ideal for household devices.</p>
@@ -215,29 +453,58 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <!-- Upcoming products -->
 
-      <!-- Product 5 -->
+  <section class="products-section container">
+    <h1>⚙️ Upcoming Products ⚙️</h1>
+    <div class="row g-4">
+
+      <!-- Upcoming Product 1 -->
       <div class="col-md-4">
-        <div class="product-card">
-          <img src="https://media.istockphoto.com/id/1358763578/photo/modern-ceiling-fan-with-lamps-indoors-interior-element.jpg?s=612x612&w=0&k=20&c=NmummHQWtJLvuorkh8FCj6m2HAn_7NzlEKiiCqnI-l4=" alt="Fan">
+        <div class="product-card position-relative">
+          <img
+            src="https://media.istockphoto.com/id/909239654/photo/woman-controlling-smart-plug-using-app-on-mobile-phone.jpg?s=612x612&w=0&k=20&c=MdTZSyMeAze7XNDI84EXG8YDz16TW3FyrVoaGGyamDc="
+            alt="Smart Plug">
+          <span class="coming-soon-label">Coming Soon</span>
           <div class="card-body">
-            <h5>Ceiling Fan</h5>
-            <p>Elegant energy-saving fan with aerodynamic blades for smooth airflow.</p>
-            <div class="price">$49.99</div>
-            <button class="btn btn-buy mt-3"><i class="bi bi-cart"></i> Buy Now</button>
+            <h5>Smart Wi-Fi Plug</h5>
+            <p>Control your home devices remotely with Alexa & Google Assistant support.</p>
+            <div class="price">$22.99</div>
+            <button class="btn btn-secondary mt-3" disabled><i class="bi bi-hourglass-split"></i> Coming Soon</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 6 -->
+      <!-- Upcoming Product 2 -->
       <div class="col-md-4">
-        <div class="product-card">
-          <img src="https://media.istockphoto.com/id/147853023/photo/universal-adapter-with-clipping-path.jpg?s=612x612&w=0&k=20&c=K1TpSLZYx-oKb3g2s8F7nOfVZe8zty7Ulzi7_7xvVNw=" alt="Adapter">
+        <div class="product-card position-relative">
+          <img
+            src="https://media.istockphoto.com/id/1311272301/photo/smart-home-living-room.jpg?s=612x612&w=0&k=20&c=tBnlR1xOe8R5qXtA5c3TN5XK7wOSes63OmLH3pGvKas="
+            alt="Smart Thermostat">
+          <span class="coming-soon-label">Coming Soon</span>
           <div class="card-body">
-            <h5>Universal Adapter</h5>
-            <p>Compact and reliable multi-plug adapter for global compatibility.</p>
-            <div class="price">$12.99</div>
-            <button class="btn btn-buy mt-3"><i class="bi bi-cart"></i> Buy Now</button>
+            <h5>Smart Thermostat</h5>
+            <p>AI-powered temperature control system for energy-efficient comfort.</p>
+            <div class="price">$89.99</div>
+            <button class="btn btn-secondary mt-3" disabled><i class="bi bi-hourglass-split"></i> Coming Soon</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Product 3 -->
+      <div class="col-md-4">
+        <div class="product-card position-relative">
+          <img
+            src="https://media.istockphoto.com/id/1212147238/photo/powerbank-with-solar-panel-for-charging-mobile-devices-and-set-of-recharger-heads-on-black.jpg?s=612x612&w=0&k=20&c=frGniEpe6fMzOfskBLL9gNH0D9k_PHOQ-Sa2QwT2l5c="
+            alt="Solar Power Bank">
+          <span class="coming-soon-label">Coming Soon</span>
+          <div class="card-body">
+            <h5>Solar Power Bank</h5>
+            <p>Eco-friendly power bank that charges with sunlight — perfect for travel.</p>
+            <div class="price">$39.99</div>
+            <button class="btn btn-secondary mt-3" disabled><i class="bi bi-hourglass-split"></i> Coming Soon</button>
           </div>
         </div>
       </div>
@@ -245,8 +512,20 @@
     </div>
   </section>
 
+
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-1">© 2025 Transflower Store. All rights reserved.</p>
+      <p class="mb-0">Follow us on
+        <a href="#" class="text-danger text-decoration-none">Instagram</a> |
+        <a href="#" class="text-danger text-decoration-none">Facebook</a>
+      </p>
+    </div>
+  </footer>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

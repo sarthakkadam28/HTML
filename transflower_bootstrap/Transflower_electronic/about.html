@@ -4,139 +4,261 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Transflower Store⚡</title>
+  <title>About ⚡ Transflower Store</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
     body {
-      background: linear-gradient(120deg, #e8c55c, #0a0c0c);
+      margin: 0;
       font-family: 'Poppins', sans-serif;
+      background-image: url("https://media.istockphoto.com/id/498722904/photo/abstract-ceiling-and-escalator-in-hall-of-shopping-mall.jpg?s=612x612&w=0&k=20&c=HJZypOH0_Prm_ByvlqnFpsu9po0SP49uGEjtYiOot_4=");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: black;
     }
 
+    /* body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    } */
+
+    /* Navbar */
     .navbar {
-      background: linear-gradient(45deg, #dcbe48, #030304);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background: rgba(0, 0, 0, 0.6) !important;
+      backdrop-filter: blur(8px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
     }
 
-    .logo {
-      height: 45px;
-      width: auto;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
+    .navbar-brand {
+      color: #fffdfd !important;
+      font-weight: 600;
     }
 
-    .logo:hover {
-      transform: scale(1.1);
+    .navbar .logo {
+      width: 45px;
+      border-radius: 10px;
+      margin-right: 10px;
     }
 
-    h2 {
-      color: #0d47a1;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 30px;
+    .navbar .nav-link {
+      color: rgb(247, 246, 246) !important;
+      margin: 0 8px;
+      transition: all 0.3s;
     }
 
+    .navbar .nav-link:hover {
+      color: #ffc107 !important;
+      transform: scale(1.05);
+    }
+
+    /* About Section */
     .about-section {
-      background: #ffffffb0;
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      margin-top: 60px;
+      padding: 150px 0 80px;
+      text-align: center;
     }
 
-    .about-section p {
-      color: #212121;
-      font-size: 1.1rem;
-      line-height: 1.8;
+    .about-card {
+      background: rgba(13, 10, 10, 0.8);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(21, 19, 19, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      color: #110e0e;
+      /* black text */
+    }
+
+    .about-card h2 {
+      color: #ffc107;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .about-card p {
+      color: #e6e6e6;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Mission & Vision */
+    .info-cards .card {
+      background: rgba(255, 255, 255, 0.85);
+      color: #000;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .info-cards .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .info-cards .card i {
+      font-size: 2rem;
+      color: #ffc107;
+      margin-bottom: 10px;
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .team-card {
+      background: rgba(254, 254, 254, 0.85);
+      color: #000;
+      border-radius: 20px;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .team-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #ffc107;
+      object-fit: cover;
       margin-bottom: 15px;
     }
 
+    .team-card h5 {
+      color: #ffc107;
+      margin-bottom: 5px;
+    }
+
     footer {
-      background: linear-gradient(45deg, #dfc04e, #151a1e);
-      color: white;
+      background: rgba(0, 0, 0, 0.7);
       text-align: center;
-      padding: 15px;
-      margin-top: 60px;
+      color: white;
+      padding: 15px 0;
+      margin-top: 50px;
     }
 
-    .btn-learn {
-      background-color: #1976d2;
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      padding: 10px 25px;
-      font-weight: 600;
-      transition: all 0.3s ease;
+    footer a {
+      color: #ffc107;
+      text-decoration: none;
     }
 
-    .btn-learn:hover {
-      background-color: #0d47a1;
-      transform: scale(1.05);
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
+
 </head>
 
 <body>
-  <!-- ⚡ Navbar Start -->
+
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="https://cdn.logojoy.com/wp-content/uploads/20220228134805/optimal-electrical-logo.png"
-          alt="Transflower Logo" class="logo me-2">
-        <span>Transflower Store</span>
+        <img src="https://cdn.logojoy.com/wp-content/uploads/20220228134805/optimal-electrical-logo.png" class="logo"
+          alt="Transflower Logo">
+        Transflower Store
       </a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-lightning"></i> Products</a>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="about.html"><i class="bi bi-info-circle"></i> About</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- ⚡ Navbar End -->
 
-  <!-- ⚡ About Section -->
-  <div class="container about-section">
-    <h2>About Transflower Store⚡</h2>
-    <div class="row align-items-center">
-      <div class="col-md-6 mb-4 mb-md-0">
-        <img src="https://images.unsplash.com/photo-1581091012184-5c71da57474f?auto=format&fit=crop&w=800&q=80"
-          class="img-fluid rounded shadow" alt="About Transflower">
+  <!-- About Section -->
+  <!-- About Section -->
+<section class="about-section container">
+  <div class="about-card">
+    <h2>About Transflower Store</h2>
+    <img src="https://media.istockphoto.com/id/2124491413/photo/washing-machines-and-dishwashers-in-a-high-end-electronics-store.jpg?s=612x612&w=0&k=20&c=2oknCpYG2Qxw65pLWVNjA6cmqRbWJpZRhW5PW_a4CFE=" 
+         alt="Smart Home Electrical Products" class="img-fluid rounded mb-4">
+    <p>
+      Welcome to <strong>Transflower Store</strong> — your one-stop destination for premium-quality electrical
+      products. From smart bulbs to energy-efficient fans, we aim to make your living smarter, safer, and more efficient.
+    </p>
+    <p>
+      Founded with innovation in mind, we combine advanced technology with modern design. Our commitment to
+      quality, safety, and sustainability drives everything we do.
+    </p>
+  </div>
+
+  <!-- Mission & Vision -->
+  <div class="row mt-5 g-4 info-cards">
+    <div class="col-md-6">
+      <div class="card p-3">
+        <i class="bi bi-bullseye"></i>
+        <h4>Our Mission</h4>
+        <img src="https://media.istockphoto.com/id/1361654833/photo/couple-using-smart-speaker-while-doing-other-everyday-tasks.jpg?s=612x612&w=0&k=20&c=wvnlF2ifZtgtpOxEXKDDMgAKRqpJcfv4ov3f6rKbIhI=" 
+             alt="Mission" class="img-fluid rounded mb-3">
+        <p>To provide reliable, high-performance electrical solutions that empower homes and businesses across the globe.</p>
       </div>
-      <div class="col-md-6">
-        <p>
-          <strong>Transflower Store⚡</strong> is your trusted partner for quality electrical products and smart
-          technology solutions.
-          We’re passionate about powering homes, businesses, and industries with safe, innovative, and energy-efficient
-          equipment.
-        </p>
-        <p>
-          Founded in <strong>2020</strong>, we have grown into one of India’s reliable sources for electrical supplies —
-          offering top brands, expert guidance, and exceptional service.
-        </p>
-        <p>
-          From cables and lighting to home automation systems, we ensure that every product we provide is built to last,
-          perform, and power your success.
-        </p>
-        <a href="contact.html" class="btn btn-learn mt-3">Get in Touch</a>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-3">
+        <i class="bi bi-eye-fill"></i>
+        <h4>Our Vision</h4>
+        <img src="https://media.istockphoto.com/id/1429238144/photo/a-real-estate-agent-shakes-hands-with-a-client-after-completing-a-transaction-regarding-a.jpg?s=612x612&w=0&k=20&c=FNx_GyMtnXV1KBBLl6Dxcn1JeGlTORytCVzWeQj9-zM=" 
+             alt="Vision" class="img-fluid rounded mb-3">
+        <p>To become the most trusted brand in the electrical industry by innovating smart, eco-friendly, and durable products.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ⚡ Footer -->
+<!-- Team Section -->
+<section class="team-section container">
+  <h2 class="text-center mb-5"><i class="bi bi-people-fill"></i> Meet Our Team</h2>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-3">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1603415526960-f9e4c66f5d0d?auto=format&fit=crop&w=200&q=80" alt="Founder">
+        <h5>Ravi Kumar</h5>
+        <p>Founder & CEO</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=200&q=80" alt="Manager">
+        <h5>Priya Mehta</h5>
+        <p>Operations Manager</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1581092332816-5c69a434f634?auto=format&fit=crop&w=200&q=80" alt="Engineer">
+        <h5>Arjun Desai</h5>
+        <p>Product Engineer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   <footer>
-    &copy; 2025 Transflower Store. All Rights Reserved.
+    <p>© 2025 Transflower Store. All rights reserved.</p>
+    <p>Follow us on <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
   </footer>
 
   <!-- Bootstrap JS -->
