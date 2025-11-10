@@ -12,23 +12,25 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-image: url("https://media.istockphoto.com/id/498722904/photo/abstract-ceiling-and-escalator-in-hall-of-shopping-mall.jpg?s=612x612&w=0&k=20&c=HJZypOH0_Prm_ByvlqnFpsu9po0SP49uGEjtYiOot_4=");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: black;
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* keeps it behind content */
+      filter: brightness(1.15) contrast(1.2) saturate(1.1);
     }
 
-    /* body::before {
+    /* Light overlay for readability */
+    body::before {
       content: "";
-      position: absolute;
+      position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
-      z-index: -1;
-    } */
+      background: rgba(0, 0, 0, 0.2);
+      z-index: 0;
+    }
 
     /* Navbar */
     .navbar {
@@ -69,14 +71,14 @@
     }
 
     .about-card {
-      background: rgba(13, 10, 10, 0.8);
+      background: rgba(255, 255, 255, 0.5);
+      /* was 0.8 — now more transparent */
       border-radius: 20px;
       padding: 40px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(21, 19, 19, 0.1);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      color: #110e0e;
-      /* black text */
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      color: #000;
     }
 
     .about-card h2 {
@@ -86,17 +88,19 @@
     }
 
     .about-card p {
-      color: #e6e6e6;
+      color: #0e0d0d;
       font-size: 1rem;
       line-height: 1.7;
     }
 
     /* Mission & Vision */
     .info-cards .card {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.45);
+      /* lighter transparency */
+      backdrop-filter: blur(6px);
       color: #000;
       border-radius: 20px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .info-cards .card:hover {
@@ -117,9 +121,11 @@
     }
 
     .team-card {
-      background: rgba(254, 254, 254, 0.85);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(6px);
       color: #000;
       border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .team-card:hover {
@@ -162,26 +168,36 @@
 </head>
 
 <body>
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source
+      src="https://media.istockphoto.com/id/1497910438/video/hispanic-woman-having-a-conversation-with-home-electronics-store-associate-young-multiethnic.mp4?s=mp4-640x640-is&k=20&c=DPtNFparDJ0MlSlT25QNvWbjMguP631y-UBNDhtzqWo="
+      type="video/mp4">
+  </video>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="https://cdn.logojoy.com/wp-content/uploads/20220228134805/optimal-electrical-logo.png" class="logo"
-          alt="Transflower Logo">
-        Transflower Store
+        <img src="https://cdn.logojoy.com/wp-content/uploads/20220228134805/optimal-electrical-logo.png"
+          alt="Transflower Logo" class="logo">
+        <span>Transflower Store</span>
       </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-lightning"></i> Products</a>
-          </li>
-          <li class="nav-item"><a class="nav-link active" href="about.html"><i class="bi bi-info-circle"></i> About</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html"><i class="bi bi-grid-1x2"></i> Catalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="register.html"><i class="bi bi-person-plus"></i>
+              Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+          <li class="nav-item"><a class="nav-link active" href="cart.html"><i class="bi bi-cart4"></i> Cart</a></li>
+          </li>
         </ul>
       </div>
     </div>
@@ -189,71 +205,80 @@
 
   <!-- About Section -->
   <!-- About Section -->
-<section class="about-section container">
-  <div class="about-card">
-    <h2>About Transflower Store</h2>
-    <img src="https://media.istockphoto.com/id/2124491413/photo/washing-machines-and-dishwashers-in-a-high-end-electronics-store.jpg?s=612x612&w=0&k=20&c=2oknCpYG2Qxw65pLWVNjA6cmqRbWJpZRhW5PW_a4CFE=" 
-         alt="Smart Home Electrical Products" class="img-fluid rounded mb-4">
-    <p>
-      Welcome to <strong>Transflower Store</strong> — your one-stop destination for premium-quality electrical
-      products. From smart bulbs to energy-efficient fans, we aim to make your living smarter, safer, and more efficient.
-    </p>
-    <p>
-      Founded with innovation in mind, we combine advanced technology with modern design. Our commitment to
-      quality, safety, and sustainability drives everything we do.
-    </p>
-  </div>
+  <section class="about-section container">
+    <div class="about-card">
+      <h2>About Transflower Store</h2>
+      <img
+        src="https://media.istockphoto.com/id/2124491413/photo/washing-machines-and-dishwashers-in-a-high-end-electronics-store.jpg?s=612x612&w=0&k=20&c=2oknCpYG2Qxw65pLWVNjA6cmqRbWJpZRhW5PW_a4CFE="
+        alt="Smart Home Electrical Products" class="img-fluid rounded mb-4">
+      <p>
+        Welcome to <strong>Transflower Store</strong> — your one-stop destination for premium-quality electrical
+        products. From smart bulbs to energy-efficient fans, we aim to make your living smarter, safer, and more
+        efficient.
+      </p>
+      <p>
+        Founded with innovation in mind, we combine advanced technology with modern design. Our commitment to
+        quality, safety, and sustainability drives everything we do.
+      </p>
+    </div>
 
-  <!-- Mission & Vision -->
-  <div class="row mt-5 g-4 info-cards">
-    <div class="col-md-6">
-      <div class="card p-3">
-        <i class="bi bi-bullseye"></i>
-        <h4>Our Mission</h4>
-        <img src="https://media.istockphoto.com/id/1361654833/photo/couple-using-smart-speaker-while-doing-other-everyday-tasks.jpg?s=612x612&w=0&k=20&c=wvnlF2ifZtgtpOxEXKDDMgAKRqpJcfv4ov3f6rKbIhI=" 
-             alt="Mission" class="img-fluid rounded mb-3">
-        <p>To provide reliable, high-performance electrical solutions that empower homes and businesses across the globe.</p>
+    <!-- Mission & Vision -->
+    <div class="row mt-5 g-4 info-cards">
+      <div class="col-md-6">
+        <div class="card p-3">
+          <i class="bi bi-bullseye"></i>
+          <h4>Our Mission</h4>
+          <img
+            src="https://media.istockphoto.com/id/1361654833/photo/couple-using-smart-speaker-while-doing-other-everyday-tasks.jpg?s=612x612&w=0&k=20&c=wvnlF2ifZtgtpOxEXKDDMgAKRqpJcfv4ov3f6rKbIhI="
+            alt="Mission" class="img-fluid rounded mb-3">
+          <p>To provide reliable, high-performance electrical solutions that empower homes and businesses across the
+            globe.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <i class="bi bi-eye-fill"></i>
+          <h4>Our Vision</h4>
+          <img
+            src="https://media.istockphoto.com/id/1429238144/photo/a-real-estate-agent-shakes-hands-with-a-client-after-completing-a-transaction-regarding-a.jpg?s=612x612&w=0&k=20&c=FNx_GyMtnXV1KBBLl6Dxcn1JeGlTORytCVzWeQj9-zM="
+            alt="Vision" class="img-fluid rounded mb-3">
+          <p>To become the most trusted brand in the electrical industry by innovating smart, eco-friendly, and durable
+            products.</p>
+        </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="card p-3">
-        <i class="bi bi-eye-fill"></i>
-        <h4>Our Vision</h4>
-        <img src="https://media.istockphoto.com/id/1429238144/photo/a-real-estate-agent-shakes-hands-with-a-client-after-completing-a-transaction-regarding-a.jpg?s=612x612&w=0&k=20&c=FNx_GyMtnXV1KBBLl6Dxcn1JeGlTORytCVzWeQj9-zM=" 
-             alt="Vision" class="img-fluid rounded mb-3">
-        <p>To become the most trusted brand in the electrical industry by innovating smart, eco-friendly, and durable products.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Team Section -->
-<section class="team-section container">
-  <h2 class="text-center mb-5"><i class="bi bi-people-fill"></i> Meet Our Team</h2>
-  <div class="row g-4 justify-content-center">
-    <div class="col-md-3">
-      <div class="team-card">
-        <img src="https://images.unsplash.com/photo-1603415526960-f9e4c66f5d0d?auto=format&fit=crop&w=200&q=80" alt="Founder">
-        <h5>Ravi Kumar</h5>
-        <p>Founder & CEO</p>
+  <!-- Team Section -->
+  <section class="team-section container">
+    <h2 class="text-center mb-5"><i class="bi bi-people-fill"></i> Meet Our Team</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1603415526960-f9e4c66f5d0d?auto=format&fit=crop&w=200&q=80"
+            alt="Founder">
+          <h5>Ravi Tambade</h5>
+          <p>Founder & CEO</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=200&q=80"
+            alt="Manager">
+          <h5>Kajal Ghule</h5>
+          <p>Operations Manager</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1581092332816-5c69a434f634?auto=format&fit=crop&w=200&q=80"
+            alt="Engineer">
+          <h5>Sarthak Kadam</h5>
+          <p>Product Engineer</p>
+        </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="team-card">
-        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=200&q=80" alt="Manager">
-        <h5>Priya Mehta</h5>
-        <p>Operations Manager</p>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="team-card">
-        <img src="https://images.unsplash.com/photo-1581092332816-5c69a434f634?auto=format&fit=crop&w=200&q=80" alt="Engineer">
-        <h5>Arjun Desai</h5>
-        <p>Product Engineer</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
   <footer>

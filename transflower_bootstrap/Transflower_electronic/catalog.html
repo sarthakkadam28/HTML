@@ -12,16 +12,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-image: url("https://media.istockphoto.com/id/1130957262/photo/composition-with-tools-and-industrial-material-with-gray-background.jpg?s=612x612&w=0&k=20&c=wLGb-H2DxeHrFqZqm6w81xjPqElGqHqyaUWezcOyXWY=");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            color: #000;
-            padding-top: 80px;
+        #bgVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            /* keeps it behind content */
+            filter: brightness(1.15) contrast(1.2) saturate(1.1);
         }
+
+        /* Light overlay for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 0;
+        }
+
 
         .category-section {
             padding: 60px 0;
@@ -56,14 +67,14 @@
         }
 
         .btn-buy {
-            background-color: #c5983e;
+            background-color: #378be4;
             color: #000;
             font-weight: 600;
             border: none;
         }
 
         .btn-buy:hover {
-            background-color: #cda73c;
+            background-color: #4396f5;
             transform: scale(1.05);
         }
 
@@ -78,6 +89,11 @@
 </head>
 
 <body>
+    <video autoplay muted loop playsinline id="bgVideo">
+        <source
+            src="https://media.istockphoto.com/id/482480900/video/conceptual-framework-lights.mp4?s=mp4-640x640-is&k=20&c=ipMVp-lmBEG-v0QukDSCeOT8vDmhezDRncbdvDmWK0I="
+            type="video/mp4">
+    </video>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
         <div class="container">
@@ -103,6 +119,7 @@
                             Register</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right"></i>
                             Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="cart.html"><i class="bi bi-cart4"></i> Cart</a></li>
                 </ul>
             </div>
         </div>
@@ -260,7 +277,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
-                                <img src="https://images.unsplash.com/photo-1612831455542-12c7efcfcb5a?auto=format&fit=crop&w=400&q=80"
+                                <img src="https:/https://media.istockphoto.com/id/1137313642/photo/hair-care-tools-in-a-home-bathroom.jpg?s=612x612&w=0&k=20&c=KwwbeX2xL7Kp94i0_WlNJJCcNuWyFWELKb4tnjk_uhc="
                                     class="card-img-top" alt="Hair Straightener">
                                 <div class="card-body">
                                     <h5 class="card-title">Hair Straightener</h5>
@@ -271,7 +288,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
-                                <img src="https://images.unsplash.com/photo-1612831455542-12c7efcfcb5a?auto=format&fit=crop&w=400&q=80"
+                                <img src="https://media.istockphoto.com/id/875477902/photo/smart-mirror-concept-various-information-displayed-on-mirror-screen.jpg?s=612x612&w=0&k=20&c=Tsrq6gvmpMpn3Fg0f-T6DbmK6ZImR-RbXpgTICcX1LE="
                                     class="card-img-top" alt="Smart Mirror">
                                 <div class="card-body">
                                     <h5 class="card-title">Smart Mirror</h5>
@@ -307,7 +324,7 @@
                     <div class="row g-4 justify-content-center">
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80"
+                                <img src="https://media.istockphoto.com/id/2167364229/photo/ceiling-lamp-or-spotlight-in-the-seminar-meeting-room.jpg?s=612x612&w=0&k=20&c=kW1trWhrSMY9uLhNZkhCDTKrrHXozy1pRE7ToyhIQXk="
                                     class="card-img-top" alt="LED Floor Lamp">
                                 <div class="card-body">
                                     <h5 class="card-title">LED Floor Lamp</h5>
@@ -318,7 +335,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
-                                <img src="https://images.unsplash.com/photo-1576669809967-ef45db88d80a?auto=format&fit=crop&w=400&q=80"
+                                <img src="https://media.istockphoto.com/id/2202763844/photo/reading-lamp-on-the-bedside-table-in-an-apartment-comfortable-hotel.jpg?s=612x612&w=0&k=20&c=0ZCLR-aiFMCsrVDcPARnSlNLC2fuDYlewvgxS1rzRIE="
                                     class="card-img-top" alt="Smart Table Lamp">
                                 <div class="card-body">
                                     <h5 class="card-title">Smart Table Lamp</h5>
@@ -329,7 +346,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
-                                <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=400&q=80"
+                                <img src="https://media.istockphoto.com/id/1292408056/photo/modern-oil-aroma-diffuser-close-up-on-a-blurred-background.jpg?s=612x612&w=0&k=20&c=HasDoJCQjOcuJKpRJFAFPt05QoHKdwbuYcl9AKBbl5g="
                                     class="card-img-top" alt="Aroma Diffuser">
                                 <div class="card-body">
                                     <h5 class="card-title">Aroma Diffuser</h5>
@@ -346,7 +363,7 @@
                     <div class="row g-4 justify-content-center">
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
-                                <img src="https://images.unsplash.com/photo-1582719478171-d22e4f0f8e3e?auto=format&fit=crop&w=400&q=80"
+                                <img src="https://media.istockphoto.com/id/2153983268/photo/mockup-large-blank-billboard-at-front-of-entrance-door-of-shopping-mall.jpg?s=612x612&w=0&k=20&c=zwx1bA6HTliNgtyAdCF3ZotdZiKQlHGtnoUSKLYYEPY="
                                     class="card-img-top" alt="LED Wall Panel">
                                 <div class="card-body">
                                     <h5 class="card-title">LED Wall Panel</h5>
@@ -357,7 +374,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
-                                <img src="https://images.unsplash.com/photo-1612831455542-12c7efcfcb5a?auto=format&fit=crop&w=400&q=80"
+                                <img src="https://media.istockphoto.com/id/629987056/photo/christmas-lamp.jpg?s=612x612&w=0&k=20&c=ZZsdpHIii0hF3QkDMhDTHGyUBG72HG6MGqIOqPhPPyg="
                                     class="card-img-top" alt="Smart Candle Lamp">
                                 <div class="card-body">
                                     <h5 class="card-title">Smart Candle Lamp</h5>
@@ -368,7 +385,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card h-100 text-center">
-                                <img src="https://images.unsplash.com/photo-1599507596630-5d1b2a44d693?auto=format&fit=crop&w=400&q=80"
+                                <img src="https://media.istockphoto.com/id/509918324/photo/valentines-day.jpg?s=612x612&w=0&k=20&c=CKvdnkwjKakmZGXQvi7YBoJwnsAihPGywpEEzJyM7S8="
                                     class="card-img-top" alt="Decorative LED Clock">
                                 <div class="card-body">
                                     <h5 class="card-title">Decorative LED Clock</h5>

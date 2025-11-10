@@ -2,72 +2,236 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transflower Store⚡</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transflower Store ⚡</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
   <style>
     body {
-      height: 100%;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-image: url("https://images.unsplash.com/photo-1606922306723-f146c749b19e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1972");
+      color: #fff;
+      background: url("https://media.istockphoto.com/id/527904442/photo/abstract-3d-rendering-of-cracked-surface.jpg?s=612x612&w=0&k=20&c=Cso-7hIHm37lQcdYkBUcPKpshiE3C2QNkwVQxFymsEw=") no-repeat center center fixed;
       background-size: cover;
-      /* Ensures image always fills the screen */
-      background-position: center;
-      /* Centers image */
-      background-repeat: no-repeat;
-      /* Prevents tiling */
-      background-attachment: fixed;
-      /* Keeps image fixed when scrolling */
-      color: white;
+      scroll-behavior: smooth;
     }
 
-    /* Ensure text remains readable */
-    .card,
-    nav,
-    header,
-    footer,
+    /* Navbar */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.9);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+
+    /* Hero */
+    .carousel-item img {
+      width: 40%;
+      height: 85vh;
+      /* Default for desktops */
+      object-fit: contain;
+      filter: brightness(0.65);
+      /* Keeps text visible */
+      transition: height 0.3s ease-in-out;
+    }
+
+    /* Add space below the fixed navbar */
+    #heroCarousel {
+      margin-top: 80px;
+      /* adjust to your liking */
+    }
+
+
+    .carousel-caption {
+      bottom: 20%;
+    }
+
+    .carousel-caption h2 {
+      font-weight: 700;
+      font-size: 2.6rem;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .carousel-caption p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* 🔹 Transparent Section Style (Glassmorphism) */
     section {
-      background-color: rgba(255, 255, 255, 0.92);
-      /* subtle transparency for contrast */
-      backdrop-filter: blur(2px);
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      color: #fff;
+      margin-top: 4rem;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .navbar,
+    h2.section-title {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Product Cards (semi-transparent) */
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .btn-warning {
+      color: #000;
+      font-weight: 600;
+      border-radius: 25px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-warning:hover {
+      background-color: #4bc0f6;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      color: #f5f5f5;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .testimonial img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #3fbfe2;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .testimonial h5 {
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    /* Awards */
+    .award-card {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      color: #fff;
+    }
+
+    .award-card img {
+      height: 90px;
+      width: auto;
+      margin-bottom: 1rem;
+    }
+
+    .award-card h6 {
+      font-weight: 600;
+    }
+
     footer {
-      background-color: rgba(0, 0, 0, 0.8) !important;
-      /* keeps navbar/footer dark and clear */
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .top-bar {
-      background-color: rgba(60, 57, 56, 0.955);
-      /* fully transparent */
-      display: flex;
-      justify-content: flex-end;
-      padding: 1rem 2rem;
+    footer a {
+      color: #45b0f7;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Background video setup */
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* ensures it fills the screen */
+      z-index: -1;
+      /* keep it behind everything */
+      filter: brightness(1.1) contrast(1.15) saturate(1.1);
+      /* makes it clear and vivid */
+    }
+
+    /* Optional: subtle overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      /* very light overlay */
+      z-index: 0;
     }
   </style>
 
 </head>
 
 <body>
-  <!-- 🌸 Navbar Start -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source
+      src="https://media.istockphoto.com/id/2157602352/video/chatbot-ai-answering-user-questions.mp4?s=mp4-640x640-is&k=20&c=Abn9Qh0v-WZsxWqOYdQSw0Wfv1y9Zcnr3nliDeLx5y8="
+      type="video/mp4">
+  </video>
+
+  <!-- 🌸 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="https://cdn.logojoy.com/wp-content/uploads/20220228134805/optimal-electrical-logo.png"
-          alt="Transflower Logo" class="logo me-2">
+          alt="Transflower Logo" class="me-2" />
         <span>Transflower Store</span>
       </a>
 
@@ -76,152 +240,248 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house-door"></i> Home</a>
-          </li>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-house-door"></i> Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="register.html"><i class="bi bi-person-plus"></i> Register</a>
           </li>
           <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="catalog.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-              Categories
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Electronics</a></li>
-              <li><a class="dropdown-item" href="#">Fashion</a></li>
-              <li><a class="dropdown-item" href="#">Home Decor</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html"><i class="bi bi-grid-1x2"></i> Catalog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="cart.html"><i class="bi bi-cart4"></i> Cart</a></li>
         </ul>
-        <form class="d-flex ms-lg-3 mt-3 mt-lg-0">
-          <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
-          <button class="btn btn-light" type="submit"><i class="bi bi-search"></i> Search</button>
-        </form>
       </div>
+      <form id="searchForm" class="d-flex ms-lg-3">
+        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search products...">
+        <button class="btn btn-light" type="submit">Search</button>
+      </form>
     </div>
   </nav>
-  <!-- 🌸 Navbar End -->
 
-  <!-- 🌸 Hero Section -->
- <!-- 🌸 Hero Carousel Section -->
-<section class="hero">
+
+  <!-- 🌸 Hero Carousel -->
   <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <!-- Slide 1 -->
       <div class="carousel-item active">
-        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4433e5?auto=format&fit=crop&w=1920&q=80" 
-             class="d-block w-100" alt="Smart Home Lighting">
-        <div class="carousel-caption d-none d-md-block">
+        <img
+          src="https://media.istockphoto.com/id/1188174031/photo/office-studio-loft-style-interior-design-concrete-wall-gray-glossy-on-wooden-tiles-3d.jpg?s=612x612&w=0&k=20&c=Sgg12lsiLlHaJoAX5CQbPpqp-oqHBb5ngay0IyGVP40="
+          class="d-block w-100" alt="Smart Home Lighting">
+        <div class="carousel-caption">
           <h2>💡 Illuminate Your Home</h2>
           <p>Smart, energy-efficient lighting solutions for every corner.</p>
           <a href="products.html" class="btn btn-warning">Shop Now</a>
         </div>
       </div>
-      <!-- Slide 2 -->
+
       <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1581090700227-93d69f2cdb77?auto=format&fit=crop&w=1920&q=80" 
-             class="d-block w-100" alt="Home Appliances">
-        <div class="carousel-caption d-none d-md-block">
+        <img
+          src="https://media.istockphoto.com/id/1235238883/photo/set-of-home-kitchen-appliances-on-the-wall-background-household-technics.jpg?s=612x612&w=0&k=20&c=Mj6o-pfrQ0vw_QED9nBFuRjz2Ssyz_4fzEjwnRS_4XE="
+          class="d-block w-100" alt="Home Appliances">
+        <div class="carousel-caption">
           <h2>⚡ Power Up Your Life</h2>
           <p>Reliable electrical appliances for modern living.</p>
           <a href="products.html" class="btn btn-warning">Shop Now</a>
         </div>
       </div>
-      <!-- Slide 3 -->
+
       <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1606922306723-f146c749b19e?auto=format&fit=crop&w=1920&q=80" 
-             class="d-block w-100" alt="Decorative Lights">
-        <div class="carousel-caption d-none d-md-block">
-          <h2>🌸 Style Meets Technology</h2>
+        <img
+          src="https://media.istockphoto.com/id/1192175587/photo/premium-home-appliance-store-interior.jpg?s=612x612&w=0&k=20&c=WkflXM-Paa7zw5KE_VoDtZET513vMKkFU9DKaITJDqA="
+          class="d-block w-100" alt="Decorative Lights">
+        <div class="carousel-caption">
+          <h2> Style Meets Technology</h2>
           <p>Decorative and functional products to beautify your home.</p>
           <a href="products.html" class="btn btn-warning">Shop Now</a>
         </div>
       </div>
     </div>
+
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
+      <span class="carousel-control-prev-icon"></span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
+      <span class="carousel-control-next-icon"></span>
     </button>
   </div>
-</section>
 
-<!-- 🌸 Best Selling Products Section -->
-<section class="container my-5">
-  <h2 class="text-center mb-4">🔥 Best Selling Products</h2>
-  <div class="row g-4">
-    <div class="col-md-3">
-      <div class="card h-100 text-center">
-        <img src="https://images.unsplash.com/photo-1616627560495-73fdaaa6a8f0?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Smart LED Bulb">
-        <div class="card-body">
-          <h5 class="card-title">Smart LED Bulb</h5>
-          <p class="card-text">Energy-saving LED with smart controls via app.</p>
-          <a href="products.html" class="btn btn-warning">Buy Now</a>
+  <!-- 🌸 Best Selling Products -->
+  <section class="container text-center my-5">
+    <h2 class="section-title">🔥 Best Selling Products</h2>
+    <div class="row g-4 justify-content-center">
+      <!-- 4 cards -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card" data-name="Smart Ceiling Fan">
+          <img
+            src="https://media.istockphoto.com/id/2121706951/photo/light-bulb-on-colorful-pastel-background.jpg?s=612x612&w=0&k=20&c=CzuX3YhE15LaFRVQvLZkWYtqErjpmSmC2j-GwSX37c8="
+            class="card-img-top" alt="Smart LED Bulb">
+          <div class="card-body">
+            <h5 class="card-title">Smart LED Bulb</h5>
+            <p class="card-text">Energy-saving LED with smart app controls.</p>
+            <a href="#" class="btn btn-warning">Buy Now</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card h-100 text-center">
-        <img src="https://images.unsplash.com/photo-1600180758895-7e8e0e426f0f?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Smart Fan">
-        <div class="card-body">
-          <h5 class="card-title">Smart Ceiling Fan</h5>
-          <p class="card-text">Control your fan remotely and save electricity.</p>
-          <a href="products.html" class="btn btn-warning">Buy Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card h-100 text-center">
-        <img src="https://images.unsplash.com/photo-1598514983896-83e02cc1b111?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Decorative Lights">
-        <div class="card-body">
-          <h5 class="card-title">Decorative Wall Lights</h5>
-          <p class="card-text">Add style and ambiance to your living space.</p>
-          <a href="products.html" class="btn btn-warning">Buy Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card h-100 text-center">
-        <img src="https://images.unsplash.com/photo-1621359382852-46de0d5b62f1?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Smart Plugs">
-        <div class="card-body">
-          <h5 class="card-title">Smart Plugs</h5>
-          <p class="card-text">Control your appliances from anywhere with ease.</p>
-          <a href="products.html" class="btn btn-warning">Buy Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card" data-name="Smart Celing Fan">
+          <img
+            src="https://media.istockphoto.com/id/477260540/photo/electric-ceiling-fan-and-split-system-air-conditioner.jpg?s=612x612&w=0&k=20&c=Mt5_ndhWem3STp6IBFTGTc9dU3OrjeVb32JF8QqbZJk="
+            class="card-img-top" alt="Smart Fan">
+          <div class="card-body">
+            <h5 class="card-title">Smart Ceiling Fan</h5>
+            <p class="card-text">Control your fan remotely and save energy.</p>
+            <a href="#" class="btn btn-warning">Buy Now</a>
+          </div>
+        </div>
+      </div>
 
-  <script>
-    window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-  </script>
-  <footer class="bg-dark text-light py-4 mt-5">
-    <div class="container text-center">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card">
+          <img
+            src="https://media.istockphoto.com/id/1072958272/photo/decorative-ceiling-lamps-and-chandeliers-in-store.jpg?s=612x612&w=0&k=20&c=rAth_99IaZkgM_8h0igXEhY6dzr8WVRqGEB3vLRLWKA="
+            class="card-img-top" alt="Decorative Lights">
+          <div class="card-body">
+            <h5 class="card-title">Decorative Wall Lights</h5>
+            <p class="card-text">Add elegance and ambiance to your home.</p>
+            <a href="#" class="btn btn-warning">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card">
+          <img
+            src="https://media.istockphoto.com/id/951641384/photo/woman-plugging-smart-plug-into-wall-socket-at-home.jpg?s=612x612&w=0&k=20&c=UbdtUH86jn9ig8W4R4qP71RAC3QBhCCmfblpNNU0RHo="
+            class="card-img-top" alt="Smart Plugs">
+          <div class="card-body">
+            <h5 class="card-title">Smart Plugs</h5>
+            <p class="card-text">Control appliances from anywhere easily.</p>
+            <a href="#" class="btn btn-warning">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌟 Customer Opinions -->
+  <section class="container my-5">
+    <h2 class="section-title">🗣️ What Our Customers Say</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="testimonial">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer 1">
+          <p>"The smart bulbs are amazing! I can control them with my phone easily. Great customer support too!"</p>
+          <h5>Priya Sharma</h5>
+          <small>⭐️⭐️⭐️⭐️⭐️</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer 2">
+          <p>"Transflower’s decorative lights completely changed the vibe of my living room. Highly recommended!"</p>
+          <h5>Rahul Mehta</h5>
+          <small>⭐️⭐️⭐️⭐️⭐️</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial">
+          <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Customer 3">
+          <p>"Fast delivery and high-quality products. The smart plugs are a game changer!"</p>
+          <h5>Ananya Iyer</h5>
+          <small>⭐️⭐️⭐️⭐️⭐️</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🏆 Awards Section -->
+  <section class="container my-5">
+    <h2 class="section-title">🏆 Our Awards & Achievements</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="award-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1821/1821062.png" alt="Award 1">
+          <h6>Best Smart Home Brand 2024</h6>
+          <p>Recognized for innovation and quality in smart living products.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="award-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1821/1821040.png" alt="Award 2">
+          <h6>Customer Choice Award</h6>
+          <p>Voted as one of the most trusted online stores by 10,000+ users.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="award-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1821/1821076.png" alt="Award 3">
+          <h6>Innovation in Lighting 2023</h6>
+          <p>Honored for leading advancements in smart LED technology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌸 Footer -->
+  <footer class="text-center">
+    <div class="container">
       <p class="mb-1">© 2025 Transflower Store. All rights reserved.</p>
-      <p class="mb-0">Follow us on
-        <a href="#" class="text-danger text-decoration-none">Instagram</a> |
-        <a href="#" class="text-danger text-decoration-none">Facebook</a>
+      <p>Follow us on
+        <a href="#">Instagram</a> |
+        <a href="#">Facebook</a>
       </p>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+  <script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Search functionality
+  const searchForm = document.getElementById('searchForm');
+  const searchInput = document.getElementById('searchInput');
+  const productCards = document.querySelectorAll('.card');
+
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent page reload
+
+    const query = searchInput.value.toLowerCase().trim();
+
+    // If search box is empty, show all products
+    if (query === "") {
+      productCards.forEach(card => card.parentElement.style.display = "block");
+      return;
+    }
+
+    let found = false;
+
+    productCards.forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+      if (name.includes(query)) {
+        card.parentElement.style.display = "block";
+        found = true;
+      } else {
+        card.parentElement.style.display = "none";
+      }
+    });
+
+    // Optional: Show message if no products found
+    if (!found) {
+      alert("No products found for: " + query);
+    }
+  });
+</script>
+
 </body>
 
 </html>
