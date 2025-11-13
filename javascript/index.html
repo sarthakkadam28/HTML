@@ -1,63 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    -+
 </head>
+<!-- mouse moving coordinates -->
 <body>
-    <h1>Users</h1>
-    <hr/>
-    <p>Abhay Rathod</p>
-    <p>sarthak kadam</p>
-    <p>kajal ghule</p>
-    <p>Akshay Bhoite</p>
-    
-    <h2>User List</h2>
-    <li>Abhay Rathod</li>
-    <li>sarthak kadam</li>
-    <li>kajal ghule</li>
-    <li>Akshay Bhoite</li>
+    <script src="script.js"></script>
+    <button id="mybtn">press me </button>
+    <p id="demo">hello</p>
 
-    <ul>
-    <li>Abhay Rathod</li>
-    <li>sarthak kadam</li>
-    <li>kajal ghule</li>
-    <li>Akshay Bhoite</li>
-    </ul>
+    <script>
+        document.addEventListener("mousedown", mousedown);
+        document.addEventListener("mouseup", mouseup);
+        document.addEventListener("mousemove", mousemove);
 
-    <div>
-        <!-- <h1>hello</h1> -->
-        <img src="https://i.insider.com/592f4169b74af41b008b5977?width=700" alt="" />
-    </div>
+        var btn = document.getElementById("mybtn");
+        btn.addEventListener("click", displayDate);
 
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        };
+        function mousedown(event) {
+            console.log("mouse down")
+            var x = event.clientX;
+            var y = event.clientY;
+            var coords = " X coords: " + x + " Y coords: " + y;
+            document.getElementById("demo").innerHTML = "mousedown" + coords;
+        };
 
-    <label>
-        enter name
-        <input type="text" placeholder="happy ending"/>
-    </label>
-    <button onclick="submit">click</button>
+        function mouseup(event) {
+            console.log("mouse up")
+            var x = event.clientX;
+            var y = event.clientY;
+            var coords = " X coords: " + x + " Y coords: " + y;
+            document.getElementById("demo").innerHTML = "mouseup" +coords;
+        };
 
-    <br/><br/><br/>
-    <table>
-        <thead>
-            <th>name</th>
+        function mousemove(event) {
+            console.log("mouse move")
+            var x = event.clientX;
+            var y = event.clientY;
+            var coords = " X coords: " + x + " Y coords: " + y;
+            document.getElementById("demo").innerHTML = "mousemove" + coords;
+        }
 
-            <th>rollno</th>
-
-            <th>email</th>
-        </thead>
-        <tr>
-            <td>sarthak</td>
-
-            <td>21</td>
-
-            <td>sarthakkadam@gmail.com</td>
-        </tr>
-       
-    </table>
-    
-   
-
+    </script>
 </body>
+
 </html>
