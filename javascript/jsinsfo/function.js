@@ -8,3 +8,8 @@ function draw(name){
 
 draw("sarthak")
 draw("rahul")
+
+
+const func =(x)=> {
+  console.log("")
+}

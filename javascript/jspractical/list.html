@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <h1>
+        users all list
+    </h1>
+    <button>get flowers</button>
+    <p id="para1"></p>
+    <ol id="userlist"></ol>
+
+<script>
+$(document).ready(function () {
+    $("button").click(function () {
+        $.get("http://localhost:8000/flowers", function (data, status) {
+
+            console.log(data);
+            var p = document.getElementById("para1");
+            p.innerHTML = "";
+
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i]);
+
+                p.innerHTML =p.innerHTML +" "+ data[i].title;
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+    <!-- <script>
+
+        async function getalluser(){
+        var userurl=" "
+    try{
+        let response =await fetch(userurl);
+        console.log(response.body);
+    }
+    catch(err){
+     consle.log(err);
+    }
+};
+
+getalluser(); -->
+   </script>
+</body>
+
+</html>
