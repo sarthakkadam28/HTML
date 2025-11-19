@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>jquery.min.js</script>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td><label>Id</label></td>
+            <td><input type="text" name="id" id="id"/></td>
+        </tr>
+        <tr>
+            <td><label>title</label></td>
+            <td><input  type="text" name="title"id="title"/></td>
+        </tr>
+        <tr>
+            <td><label>description</label></td>
+            <td><input  type="text" name="description"id="description"/></td>
+        </tr>
+        <tr>
+            <td><label>price</label></td>
+            <td><input  type="number" name="price"id="price"/></td>
+        </tr>
+        <tr>
+            <td><label>likes</label></td>
+            <td><input  type="number" name="likes"id="likes"/></td>
+        </tr>
+    </table>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                var updateFlower = {
+                    "id": 10,
+                    "title": "Lotus",
+                    "description": "Delicate flower",
+                    "price": 12,
+                    "likes": 6000,
+                };
+                let url="http://localhost:8000/flowers/:flowerid"+updateFlower.id;
+                $.ajax({
+                    url:url,
+                    type:'put',
+                    data:updateFlower,
+                    success:function(result){
+                        console.log(result);
+                        console.log("flower is updated");
+                    }
+                    
+                });
+            });
+        });
+    </script> 
+    <button>update data </button>
+</body>
+</html>

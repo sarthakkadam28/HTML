@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send data client side to server</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>send data </button>
+    <!-- <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+               var newCustomer={
+                "id":33,
+                "firstname":"sarthak",
+                "lastname":"kadam",
+                "email":"sarthakkadm@gmail.com"
+               };
+
+               let url = "http://localhost:8000/api/flowers";
+               $.post(url,newCustomer,function(){
+                console.log("data is posted to server.");
+               })
+            });
+        });
+    </script> -->
+    <script>
+        $(document).ready(function () {
+
+            $("button").click(function () {
+
+                var newFlower = {
+                    "id": 16,
+                    "title": "Lily",
+                    "description": "Delicate flower",
+                    "price": 9,
+                    "likes": 6000,
+                };
+
+                // let url = "http://localhost:8000/api/flowers";
+                let url="http://localhost:8000/flowers"
+
+                $.post(url, newFlower, function () {
+                    console.log("data is posted to server.");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
