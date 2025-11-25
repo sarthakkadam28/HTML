@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Storage Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+input {
+  padding: 8px;
+  margin: 10px 0;
+  width: 80%;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+#display {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Local Storage Example</h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="saveName()">Save Name</button>
+    <button onclick="showName()">Show Name</button>
+    <p id="display"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+<script>
+    // script.js
+
+function saveName() {
+  let name = document.getElementById("username").value;
+  if (name) {
+    localStorage.setItem("username", name);
+    alert("Name saved in Local Storage!");
+  } else {
+    alert("Please enter a name.");
+  }
+}
+
+function showName() {
+  let storedName = localStorage.getItem("username");
+  if (storedName) {
+    document.getElementById("display").textContent = "Hello, " + storedName + "!";
+  } else {
+    document.getElementById("display").textContent = "No name found in Local Storage.";
+  }
+}
+
+</script>
+
+</html>
+
+
+<!-- ya madhe apan local storage madhe aplyala - Local Storage is part of the Web Storage API in JavaScript.
+- It allows you to store data in the browser that persists even after the page is refreshed or the browser is closed.
+- Data is stored as key-value pairs (like a dictionary).
+- Unlike cookies, local storage data is not sent to the server with every request.
+- Capacity: usually around 5–10 MB per domain (much larger than cookies).
+
+🛠️ Key Features
+- Data is stored as strings (you can convert objects using JSON.stringify and JSON.parse).
+- Accessible via window.localStorage.
+- Works only in the same domain.
+
+📌 Basic Methods
+|  |  | 
+| localStorage.setItem(key, value) |  | 
+| localStorage.getItem(key) |  | 
+| localStorage.removeItem(key) |  | 
+| localStorage.clear() |  | 
+| localStorage.length |  | 
+
+
+
+💻 Example 1: Storing Simple Data
+// Save data
+localStorage.setItem("username", "Sarthak");
+
+// Get data
+let user = localStorage.getItem("username");
+console.log(user); // Output: Sarthak
+
+// Remove data
+localStorage.removeItem("username");
+
+// Clear all data
+localStorage.clear();
+
+
+
+💻 Example 2: Storing Objects
+// Create an object
+let userDetails = {
+  name: "Sarthak",
+  skills: ["C#", "SQL", "MySQL"]
+};
+
+// Convert object to string before saving
+localStorage.setItem("user", JSON.stringify(userDetails));
+
+// Retrieve and convert back to object
+let data = JSON.parse(localStorage.getItem("user"));
+console.log(data.name); // Output: Sarthak
+console.log(data.skills[0]); // Output: C#
+ -->
