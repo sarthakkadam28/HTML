@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selected Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 8px 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Questions (Selected by Default)</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Question Title</th>
+                <th>Concept</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody id="questionTableBody">
+            <!-- Rows inserted here -->
+        </tbody>
+    </table>
+
+    <button onclick="showSelected()">Show Selected Questions</button>
+
+    <h3>Selected Questions:</h3>
+    <ul id="selectedList"></ul>
+
+    <script>
+        // Dummy Data (All selected by default)
+        const questions = [
+            {
+                id: 1,
+                questionTitle: "What is OOP?",
+                conceptTitle: "Object Oriented Programming",
+                level: "Beginner",
+                selected: true
+            },
+            {
+                id: 2,
+                questionTitle: "Explain Polymorphism",
+                conceptTitle: "OOP Concepts",
+                level: "Intermediate",
+                selected: true
+            },
+            {
+                id: 3,
+                questionTitle: "What is Indexing in SQL?",
+                conceptTitle: "Database",
+                level: "Beginner",
+                selected: true
+            }
+        ];
+
+        // Render table
+        const tableBody = document.getElementById("questionTableBody");
+
+        questions.forEach(q => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+            <td>
+                <input type="checkbox"
+                       class="questionCheckbox"
+                       value="${q.id}"
+                       ${q.selected ? "checked" : ""}>
+            </td>
+            <td>${q.questionTitle}</td>
+            <td>${q.conceptTitle}</td>
+            <td>${q.level}</td>
+        `;
+
+            tableBody.appendChild(row);
+        });
+
+        function showSelected() {
+            const checkboxes = document.getElementsByClassName("questionCheckbox");
+            const list = document.getElementById("selectedList");
+            list.innerHTML = "";
+
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+
+                    const id = parseInt(checkboxes[i].value); // get ID
+                    const q = questions.find(q => q.id === id); // find object
+
+                    const li = document.createElement("li");
+                    li.innerText = `${q.questionTitle} (${q.conceptTitle} - ${q.level})`;
+                    list.appendChild(li);
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
